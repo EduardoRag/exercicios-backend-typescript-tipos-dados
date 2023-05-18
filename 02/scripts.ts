@@ -40,15 +40,11 @@ const filtrarUsuarios = (lista: {
     idade: number,
     status: boolean
 }[], nome: string): { nome: string, idade: number, status: boolean }[] => {
-    let usuarioEncontrado: { nome: string, idade: number, status: boolean }[] = [];
+    const resultado = lista.filter((usuario) => {
+        return usuario.nome.toLocaleLowerCase().includes(nome.toLowerCase());
+    });
 
-    for (const usuario of lista) {
-        if (usuario.nome.toLocaleLowerCase().includes(nome.toLocaleLowerCase())) {
-            usuarioEncontrado.push(usuario);
-        }
-    }
-
-    return usuarioEncontrado;
+    return resultado;
 }
 
 console.log(filtrarUsuarios(usuarios, 'jo'));
