@@ -1,12 +1,5 @@
-const soletrar = (palavra: string) => {
-    const letras = palavra.split(/(?:)/u);
-    let palavraSoletrada: string = '';
-
-    for (const letra of letras) {
-        palavraSoletrada = palavraSoletrada + letra + '-'
-    }
-
-    return palavraSoletrada.slice(0, -1);
+const soletrar = (palavra: string): string => {
+    return palavra.split('').join('-');
 }
 
 console.log(soletrar('programador'));
