@@ -6,8 +6,8 @@ const gerarEtiqueta = (produto: {
 }): string[] => {
     const etiquetas: string[] = [];
 
-    for (let i = 0; i < produto.qtd; i++) {
-        etiquetas.push((`${produto.lote}-${produto.ano}-${((i + 1) / 100).toFixed(2)}`).replace('.', ''));
+    for (let i = 1; i <= produto.qtd; i++) {
+        etiquetas.push(`${produto.lote}-${produto.ano}-${i.toString().padStart(3, '0')}`);
     }
 
     return etiquetas;
