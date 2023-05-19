@@ -1,14 +1,16 @@
-const calc = (numbers: number[]) => {
+const calc = (numbers: number[]): string => {
+    let resultado: string = '';
+
     for (const number of numbers) {
         for (let i = 0; i < 11; i++) {
-            console.log(`${number} x ${i} = ${number * i}`);
+            resultado += `${number} x ${i} = ${number * i}\n`
             if (i === 10) {
-                console.log('---------------\n');
+                resultado += '---------------\n\n';
             }
         }
     }
 
-    return;
+    return resultado;
 }
 
-calc([1, 5, 2]);
+console.log(calc([1, 5, 2]));
